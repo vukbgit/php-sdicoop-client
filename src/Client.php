@@ -246,12 +246,8 @@ class Client extends \SoapClient
             $err_desc = curl_error($ch);
             $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-            curl_close($ch);
-
             throw new \Exception('[HTTP:'. $httpcode .'] ' . $err_desc, $err_num);
         }
-
-        curl_close($ch);
 
         $this->lastResponseBody = $this->__processResponse($this->lastResponseBody);
 
