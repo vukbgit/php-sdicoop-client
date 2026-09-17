@@ -190,7 +190,7 @@ class Client extends \SoapClient
      *
      * Credits: https://forum.italia.it/u/cesco69
      */
-    public function __doRequest( $request, $location, $action, $version, $one_way = null ): string
+    public function __doRequest( string $request, string $location, string $action, int $version, bool $one_way = false, ?string $uriParserClass = null ): ?string
     {
         // reset
         $this->lastResponseBody = '';
