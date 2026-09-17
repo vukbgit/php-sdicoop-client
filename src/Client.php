@@ -126,7 +126,7 @@ class Client extends \SoapClient
             $msg = "[ERROR] $msg";
         }
 
-        openlog(get_class(), LOG_CONS | LOG_PERROR, LOG_LOCAL0);
+        openlog(static::class, LOG_CONS | LOG_PERROR, LOG_LOCAL0);
         syslog($priority, $msg);
         closelog();
     }
